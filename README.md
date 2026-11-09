@@ -1,16 +1,2 @@
 # HUB-CFE-LoanDefaultPrediction
-Chương trình giải thích phản thực và dự đoán hồ sơ vay có nguy cơ vỡ nợ
-
-TÓM TẮT
-Mục tiêu nghiên cứu
-Nghiên cứu xây dựng mô hình học máy có khả năng giải thích trong dự đoán vỡ nợ khoản vay, kết hợp SHAP cục bộ để xác định đóng góp của các đặc trưng và giải thích phản thực (CFE) để khảo sát mức giảm lãi suất cần thiết nhằm đảo dự đoán. Trên cơ sở đó, nghiên cứu đề xuất giải pháp ứng dụng trong đào tạo và nghiên cứu tại Trường Đại học Ngân hàng Thành phố Hồ Chí Minh (HUB).
-
-Thiết kế/nghiên cứu/phương pháp tiếp cận
-Nghiên cứu sử dụng 27.003 hồ sơ khoản vay Lending Club từ Kaggle, chia phân tầng thành Train, Validation và Test theo tỷ lệ 60/20/20. Random Forest và XGBoost được so sánh theo ba cấu hình: giữ toàn bộ biến, loại 11 biến rò rỉ thông tin kết quả và loại thêm 7 biến không phù hợp với thời điểm dự đoán. Siêu tham số được tối ưu bằng RandomizedSearchCV; ngưỡng phân loại được chọn theo F1-score trên Validation. SHAP toàn cục và cục bộ giải thích mô hình và từng dự đoán, còn CFE sử dụng tìm kiếm lưới có ràng buộc, chỉ cho phép giảm lãi suất tối đa 2 điểm phần trăm. Khung XAI-ED được dùng để đề xuất ứng dụng tại HUB. Logistic Regression được dùng làm mô hình tham chiếu; điểm dự đoán được hiệu chỉnh bằng hồi quy đẳng điệu, và độ nhạy của CFE được khảo sát theo trần giảm lãi suất, mục tiêu xác suất và nhãn thực tế của hồ sơ.
-
-Kết quả nghiên cứu chính
-Sau khi loại 18 biến, hiệu suất dự đoán giảm đáng kể so với mô hình ban đầu. XGBoost được chọn với ROC-AUC 0,7197 trên Validation và 0,7075 trên Test; tại ngưỡng 0,50, Precision, Recall và F1-score trên Test lần lượt là 0,2410, 0,6340 và 0,3493. Trong 2.091 hồ sơ được dự đoán vỡ nợ, 641 hồ sơ (30,66%) đảo được dự đoán khi giảm lãi suất tối đa 2 điểm phần trăm, với mức giảm trung bình 1,0184 điểm phần trăm; với mục tiêu xác suất không quá 0,45, có 243 hồ sơ (11,62%) đạt yêu cầu. SHAP cục bộ và CFE trên hai hồ sơ minh họa cho thấy đóng góp của đặc trưng và mức điều chỉnh cần thiết khác nhau giữa các hồ sơ.
-
-Giá trị đóng góp mới
-Nghiên cứu phân tích độ nhạy của mô hình dự đoán vỡ nợ đối với lãi suất trong giới hạn xác định, kết hợp SHAP toàn cục, SHAP cục bộ và CFE để giải thích dự đoán ở cấp độ hồ sơ. Các phản thực chỉ phản ánh phản ứng của mô hình; do lãi suất vay có thể mang thông tin định giá rủi ro của bên cho vay, kết quả không chứng minh việc giảm lãi suất làm giảm rủi ro vỡ nợ thực tế. Nghiên cứu cũng đề xuất ứng dụng kết quả trong đào tạo và nghiên cứu tại HUB theo khung XAI-ED, kèm kế hoạch đánh giá.
-Từ khóa: Dự đoán vỡ nợ khoản vay, rò rỉ dữ liệu, rừng ngẫu nhiên, XGBoost, SHAP cục bộ, giải thích phản thực, XAI-ED.
+Chương trình giải thích phản thực và dự đoán hồ sơ vay có nguy cơ vỡ nợ.
